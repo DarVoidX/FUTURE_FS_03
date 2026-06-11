@@ -5,7 +5,7 @@
 <h1 align="center">ZENOS Fitness Club - Premium UI Website</h1>
 
 <div align="center">
-  <strong>🚀 Source Code:</strong> <a href="https://github.com/DarVoidX/FUTURE_FS_03.git">https://github.com/DarVoidX/FUTURE_FS_03.git</a>
+  <strong>🚀 Live Demo:</strong> <a href="https://zenos-gym.netlify.app/">https://zenos-gym.netlify.app/</a>
 </div>
 
 <br />
