@@ -1,0 +1,123 @@
+.membership-section {
+  position: relative;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  align-items: center;
+}
+
+.pricing-card {
+  background-color: var(--color-jet-black);
+  border-radius: 20px;
+  padding: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.pricing-card.highlight {
+  background-color: var(--color-crimson-red);
+  transform: scale(1.05);
+  border: none;
+  box-shadow: 0 20px 50px rgba(229, 9, 20, 0.3);
+  z-index: 2;
+}
+
+.pricing-card.highlight:hover {
+  transform: scale(1.05) translateY(-10px);
+}
+
+.popular-badge {
+  position: absolute;
+  top: 0;
+  right: 40px;
+  background-color: var(--color-pure-white);
+  color: var(--color-jet-black);
+  padding: 6px 12px;
+  font-family: var(--font-heading-sub);
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  letter-spacing: 1px;
+}
+
+.pricing-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+}
+
+.pricing-header h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.price .amount {
+  font-family: var(--font-heading-main);
+  font-size: 3.5rem;
+  line-height: 1;
+}
+
+.price .period {
+  font-size: 1rem;
+  color: var(--color-dark-silver);
+  margin-left: 5px;
+}
+
+.pricing-card.highlight .price .period,
+.pricing-card.highlight .pricing-features li {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.pricing-features {
+  margin-bottom: 30px;
+}
+
+.pricing-features li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  font-size: 1rem;
+  color: var(--color-dark-silver);
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.btn-white {
+  background-color: var(--color-pure-white);
+  color: var(--color-jet-black);
+}
+
+.btn-white:hover {
+  background-color: #f0f0f0;
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 992px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+    gap: 40px;
+  }
+
+  .pricing-card.highlight {
+    transform: scale(1);
+  }
+  
+  .pricing-card.highlight:hover {
+    transform: translateY(-10px);
+  }
+}
