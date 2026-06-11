@@ -4,6 +4,8 @@
 
 <h1 align="center">ZENOS Fitness Club - Premium UI Website</h1>
 
+<h3 align="center">Future Interns Full Stack Web Development Internship<br>Task 3 - Local Business Website & Live Pitch Project</h3>
+
 <div align="center">
   <strong>🚀 Live Demo:</strong> <a href="https://zenos-gym.netlify.app/">https://zenos-gym.netlify.app/</a>
 </div>
