@@ -36,8 +36,10 @@ Taking time with incredible patience and leveraging advanced AI, this entire wor
 ## 🛠️ Built With
 
 * **React + Vite** - Lightning-fast frontend framework
-* **GSAP + Framer Motion** - Smooth, Apple-like scroll animations and transitions
+* **React Router v7** - Smooth client-side navigation
+* **GSAP + Framer Motion** - High-end, Apple-like scroll animations and page transitions
 * **Vanilla CSS** - Completely custom styling for absolute control over the premium dark-mode aesthetic.
+* **Lucide React** - Modern, beautiful SVG iconography
 
 ## 🚀 How to Run Locally
 
