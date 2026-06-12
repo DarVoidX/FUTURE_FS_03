@@ -18,7 +18,7 @@ This project is a highly premium, modern, and aesthetic front-end website built 
 
 Taking time with incredible patience and leveraging advanced AI, this entire world-class gym website was successfully built and brought to life within just a single day!
 
-### ✨ Key Features added in v2.0
+### ✨ Key Features
 * **Dedicated Nutrition & Diet Portal:** Scientifically designed, age-specific Indian diet plans (Teenagers, Young Adults, Adults, Seniors) featuring interactive water intake, protein, and calorie trackers.
 * **Advanced Fitness Tools:** Real-time Body Mass Index (BMI), Basal Metabolic Rate (BMR), Total Daily Energy Expenditure (TDEE), and Body Fat calculators seamlessly built into the UI.
 * **Senior Health Programs:** Specialized curriculum designed exclusively for 50+ members focused on mobility, joint health, and vitality.
