@@ -1,0 +1,136 @@
+.tools-page {
+  padding-top: 100px;
+}
+
+.dashboard-container {
+  display: flex;
+  gap: 2rem;
+  background: rgba(20, 20, 20, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  overflow: hidden;
+  min-height: 500px;
+}
+
+.tabs-sidebar {
+  width: 250px;
+  background: rgba(10, 10, 10, 0.8);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.tab-btn {
+  display: flex;
+  align-items: center;
+  padding: 1.2rem 1.5rem;
+  background: transparent;
+  border: none;
+  border-left: 3px solid transparent;
+  color: var(--light-gray);
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.tab-btn:hover {
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--white);
+}
+
+.tab-btn.active {
+  background: linear-gradient(90deg, rgba(229, 9, 20, 0.15) 0%, transparent 100%);
+  border-left-color: var(--primary);
+  color: var(--white);
+}
+
+.tab-icon {
+  margin-right: 1rem;
+  color: inherit;
+}
+
+.tab-content {
+  flex: 1;
+  padding: 3rem;
+  position: relative;
+}
+
+.calculator-wrapper {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.calculator h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--white);
+}
+
+.calc-form .input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.calc-form label {
+  font-size: 0.9rem;
+  color: var(--light-gray);
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+}
+
+.calc-form input,
+.calc-form select {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  color: var(--white);
+  font-family: inherit;
+  transition: border-color 0.3s;
+}
+
+.calc-form input:focus,
+.calc-form select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.result-box {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+  
+  .tabs-sidebar {
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    white-space: nowrap;
+  }
+  
+  .tab-btn {
+    border-left: none;
+    border-bottom: 3px solid transparent;
+    padding: 1rem;
+    flex-shrink: 0;
+  }
+  
+  .tab-btn.active {
+    background: linear-gradient(0deg, rgba(229, 9, 20, 0.15) 0%, transparent 100%);
+    border-left-color: transparent;
+    border-bottom-color: var(--primary);
+  }
+  
+  .tab-content {
+    padding: 2rem 1.5rem;
+  }
+}

@@ -47,8 +47,8 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="hero-buttons"
           >
-            <button className="btn-primary">Start Transformation</button>
-            <button className="btn-outline">Book Free Trial</button>
+            <button className="btn-primary" onClick={() => window.dispatchEvent(new Event('openMembershipModal'))}>Start Transformation</button>
+            <button className="btn-outline" onClick={() => window.dispatchEvent(new Event('openFreeTrialModal'))}>Book Free Trial</button>
           </motion.div>
         </div>
 

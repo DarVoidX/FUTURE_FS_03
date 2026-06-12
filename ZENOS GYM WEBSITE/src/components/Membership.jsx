@@ -75,7 +75,10 @@ const Membership = () => {
                 ))}
               </ul>
               
-              <button className={`btn-primary ${plan.highlight ? 'btn-white' : ''} w-100`}>
+              <button 
+                className={`btn-primary ${plan.highlight ? 'btn-white' : ''} w-100`}
+                onClick={() => window.dispatchEvent(new CustomEvent('openMembershipModal', { detail: { plan: plan } }))}
+              >
                 Select {plan.name}
               </button>
             </motion.div>

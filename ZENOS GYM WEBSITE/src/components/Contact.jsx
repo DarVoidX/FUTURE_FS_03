@@ -29,7 +29,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4>Phone</h4>
-                  <p>+91 98765 43210</p>
+                  <p>+91 7892611628</p>
                 </div>
               </div>
               <div className="contact-item">
@@ -38,7 +38,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4>WhatsApp</h4>
-                  <p>+91 98765 43210</p>
+                  <p>+91 7892611628</p>
                 </div>
               </div>
               <div className="contact-item">
@@ -56,14 +56,14 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4>Location</h4>
-                  <p>123 Premium Avenue, Kormangala, Bangalore, India</p>
+                  <p>123 Premium Avenue, Chikmagalur, Karnataka, India</p>
                 </div>
               </div>
             </div>
 
             <div className="cta-wrapper">
               <h3 className="large-cta">START YOUR FITNESS JOURNEY TODAY</h3>
-              <button className="btn-primary">Get Your Free Pass</button>
+              <button className="btn-primary" onClick={() => window.dispatchEvent(new Event('openFreeTrialModal'))}>Get Your Free Pass</button>
             </div>
           </motion.div>
 
@@ -72,15 +72,38 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="contact-map"
+            className="contact-image-wrapper"
           >
-            <div className="map-placeholder glass">
-              <MapPin size={48} className="text-red mb-4" />
-              <h3>Google Maps Integration</h3>
-              <p>Location Map goes here</p>
+            <div className="location-image-container glass">
+              <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=800" alt="ZENOS Gym Location" className="location-image" />
+              <div className="location-overlay">
+                <a href="https://maps.google.com/?q=Chikmagalur+Karnataka" target="_blank" rel="noreferrer" className="btn-primary flex items-center justify-center">
+                  <MapPin size={20} className="mr-2" /> Get Directions
+                </a>
+              </div>
             </div>
           </motion.div>
         </div>
+
+        {/* Embedded Google Maps */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="map-container mt-16"
+        >
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15555.275880790929!2d75.765611!3d13.315309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbad77a33994ab3%3A0x6b772bd2c668b7!2sChikkamagaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1714000000000!5m2!1sen!2sin" 
+            width="100%" 
+            height="450" 
+            style={{ border: 0, borderRadius: '20px', filter: 'grayscale(100%) invert(90%) contrast(1.2)' }} 
+            allowFullScreen="" 
+            loading="lazy" 
+            referrerPolicy="no-referrer-when-downgrade"
+            title="ZENOS Gym Location"
+          ></iframe>
+        </motion.div>
       </div>
     </section>
   );

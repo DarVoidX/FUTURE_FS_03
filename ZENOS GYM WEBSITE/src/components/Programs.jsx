@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Dumbbell, Flame, BicepsFlexed, UserCircle, Activity, Trophy } from 'lucide-react';
+import ProgramModal from './ProgramModal';
 import './Programs.css';
 
 const Programs = () => {
+  const [selectedProgram, setSelectedProgram] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const programs = [
     {
       title: "Strength Training",
@@ -83,11 +86,25 @@ const Programs = () => {
               </div>
               <h3>{program.title}</h3>
               <p>{program.desc}</p>
-              <a href="#join" className="program-link">Learn More &rarr;</a>
+              <button 
+                onClick={() => {
+                  setSelectedProgram(program);
+                  setIsModalOpen(true);
+                }} 
+                className="text-primary font-bold mt-4 uppercase tracking-wider hover:text-white transition-colors"
+                style={{ background: 'transparent', border: 'none', cursor: 'pointer', padding: 0 }}
+              >
+                Learn More &rarr;
+              </button>
             </motion.div>
           ))}
         </motion.div>
       </div>
+      <ProgramModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+        program={selectedProgram} 
+      />
     </section>
   );
 };

@@ -26,7 +26,7 @@ const About = () => {
               WHY <span className="text-red">ZENOS?</span>
             </h2>
             <p className="about-description">
-              ZENOS Fitness Club is a modern Indian fitness destination focused on strength, performance, aesthetics, and long-term wellness.
+              Pioneering Bangalore fitness culture, ZENOS Fitness Club is a modern Indian fitness destination focused on Strength + Wellness, Functional Fitness, and aesthetics. Pair your training with our custom Indian diet plans featuring authentic Indian meals to achieve your ultimate physique.
             </p>
             
             <ul className="features-list">

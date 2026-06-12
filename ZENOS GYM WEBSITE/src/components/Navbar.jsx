@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,33 +17,36 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'Programs', href: '#programs' },
-    { name: 'Transformation', href: '#transformation' },
-    { name: 'Trainers', href: '#trainers' },
-    { name: 'Membership', href: '#membership' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '/#home', isHash: true },
+    { name: 'Programs', href: '/#programs', isHash: true },
+    { name: 'Nutrition', href: '/nutrition', isHash: false },
+    { name: 'Transformation', href: '/#transformation', isHash: true },
+    { name: 'Trainers', href: '/#trainers', isHash: true },
+    { name: 'Membership', href: '/#membership', isHash: true },
+    { name: 'Tools', href: '/tools', isHash: false },
+    { name: 'Contact', href: '/#contact', isHash: true },
   ];
 
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled glass' : ''}`}>
       <div className="container nav-container">
-        <a href="#home" className="logo-link">
+        <Link to="/#home" className="logo-link">
           {/* Logo uploaded by user */}
           <img src="/images/logo.png" alt="ZENOS" className="nav-logo" onError={(e) => { e.target.onerror = null; e.target.src = 'https://via.placeholder.com/150x50?text=ZENOS+LOGO'; }} />
-        </a>
+        </Link>
 
-        {/* Desktop Menu */}
         <ul className="nav-menu">
           {navLinks.map((link) => (
             <li key={link.name}>
-              <a href={link.href} className="nav-link">{link.name}</a>
+              <Link to={link.href} className={`nav-link ${location.pathname === link.href.split('#')[0] && (location.hash === '#' + link.href.split('#')[1] || (!location.hash && !link.href.includes('#'))) ? 'active' : ''}`}>
+                {link.name}
+              </Link>
             </li>
           ))}
         </ul>
 
         <div className="nav-actions">
-          <a href="#join" className="btn-primary join-btn">Join Now</a>
+          <button onClick={() => window.dispatchEvent(new Event('openMembershipModal'))} className="btn-primary join-btn">Join Now</button>
           
           {/* Mobile Menu Toggle */}
           <button 
@@ -58,13 +63,21 @@ const Navbar = () => {
         <ul>
           {navLinks.map((link) => (
             <li key={link.name}>
-              <a href={link.href} onClick={() => setMobileMenuOpen(false)}>
+              <Link to={link.href} onClick={() => setMobileMenuOpen(false)}>
                 {link.name}
-              </a>
+              </Link>
             </li>
           ))}
           <li>
-             <a href="#join" className="btn-primary" onClick={() => setMobileMenuOpen(false)}>Join Now</a>
+             <button 
+               className="btn-primary" 
+               onClick={() => {
+                 setMobileMenuOpen(false);
+                 window.dispatchEvent(new Event('openMembershipModal'));
+               }}
+             >
+               Join Now
+             </button>
           </li>
         </ul>
       </div>
