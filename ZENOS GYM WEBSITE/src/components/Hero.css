@@ -151,8 +151,8 @@
 }
 
 .stat-success {
-  bottom: 15%;
-  right: 50%;
+  top: 35%;
+  left: -25%;
 }
 
 @media (max-width: 992px) {

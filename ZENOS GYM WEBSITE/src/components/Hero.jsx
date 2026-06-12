@@ -52,38 +52,6 @@ const Hero = () => {
           </motion.div>
         </div>
 
-        <div className="hero-visuals">
-          {/* Floating Stats Cards */}
-          <motion.div 
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 1 }}
-            className="stat-card stat-members glass"
-          >
-            <h4>5000+</h4>
-            <p>Members</p>
-          </motion.div>
-
-          <motion.div 
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
-            className="stat-card stat-programs glass"
-          >
-            <h4>20+</h4>
-            <p>Programs</p>
-          </motion.div>
-
-          <motion.div 
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.4 }}
-            className="stat-card stat-success glass"
-          >
-            <h4>98%</h4>
-            <p>Success Rate</p>
-          </motion.div>
-        </div>
       </div>
     </section>
   );

@@ -1,9 +1,10 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle } from 'lucide-react';
 import './About.css';
 
 const About = () => {
+  const [showStats, setShowStats] = useState(false);
   const features = [
     "Elite Coaching",
     "Modern Equipment",
@@ -38,7 +39,33 @@ const About = () => {
               ))}
             </ul>
             
-            <button className="btn-primary mt-4">Discover More</button>
+            <button className="btn-primary mt-4" onClick={() => setShowStats(!showStats)}>
+              {showStats ? "Show Less" : "Discover More"}
+            </button>
+
+            <AnimatePresence>
+              {showStats && (
+                <motion.div 
+                  initial={{ opacity: 0, height: 0, marginTop: 0 }}
+                  animate={{ opacity: 1, height: 'auto', marginTop: 24 }}
+                  exit={{ opacity: 0, height: 0, marginTop: 0 }}
+                  className="grid grid-cols-3 gap-4 text-center overflow-hidden"
+                >
+                  <div className="bg-gray-900/50 p-4 rounded-xl border border-gray-800">
+                    <h4 className="text-red font-bold text-2xl">98%</h4>
+                    <p className="text-xs text-light-gray uppercase tracking-wider mt-1">Success Rate</p>
+                  </div>
+                  <div className="bg-gray-900/50 p-4 rounded-xl border border-gray-800">
+                    <h4 className="text-white font-bold text-2xl">5000+</h4>
+                    <p className="text-xs text-light-gray uppercase tracking-wider mt-1">Members</p>
+                  </div>
+                  <div className="bg-gray-900/50 p-4 rounded-xl border border-gray-800">
+                    <h4 className="text-white font-bold text-2xl">20+</h4>
+                    <p className="text-xs text-light-gray uppercase tracking-wider mt-1">Programs</p>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </motion.div>
           
           <motion.div 
